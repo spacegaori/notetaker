@@ -109,11 +109,12 @@ const Content: React.FC = () => {
             <div key={note.id} className="mt-5">
               <NoteCard
                 note={note}
-                onDelete={() => void deleteNote.mutate({ id: note.id })}
+                onDelete={() => void deleteNote.mutate({ topicId: note.id })}
               />
             </div>
           ))}
         </div>
+
         <NoteEditor
           onSave={({ title, content }) => {
             void createNote.mutate({
